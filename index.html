@@ -1792,7 +1792,7 @@
 
         // Fetch log
         async function getLogs() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/logs';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/logs';
             const res = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -1827,7 +1827,7 @@
         }
 
         async function getConfig() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/show_config';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/show_config';
             const res = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -1860,7 +1860,7 @@
         }
 
         async function getSysInfo() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/sysinfo';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/sysinfo';
             const res = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -1887,7 +1887,7 @@
         }
 
         async function getExchanges() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/exchanges';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/exchanges';
             const res = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -2226,7 +2226,7 @@
 
         // Daily Profit: Fetch + Render
         async function getDailyData() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/daily';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/daily';
             try {
                 const response = await fetch(url, {
                     method: 'GET',
@@ -2331,7 +2331,7 @@
 
         // Weekly Profit: Fetch + Render
         async function getWeeklyData() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/weekly';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/weekly';
             try {
                 const res = await fetch(url, {
                     method: 'GET',
@@ -2413,7 +2413,7 @@
 
         // Monthly Profit: Fetch + Render
         async function getMonthlyData() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/monthly';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/monthly';
             try {
                 const res = await fetch(url, {
                     method: 'GET',
@@ -2512,7 +2512,7 @@
 
         // Profit All (Total): Fetch + Render
         async function getProfitAll() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/profit_all';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/profit_all';
             try {
                 const res = await fetch(url, {
                     method: 'GET',
@@ -2611,7 +2611,7 @@
 
         // ================= Overview: Profit + Balance =================
         async function getBalance() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/balance';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/balance';
             try {
                 const res = await fetch(url, {
                     method: 'GET',
@@ -2699,7 +2699,7 @@
 
         // ===== Trades: Count/Status/Stats & Rendering =====
         async function getTradeCount() {
-            const res = await fetch('https://specialists-progress-drop-kay.trycloudflare.com/api/v1/count', {
+            const res = await fetch('https://reached-survive-beginner-larry.trycloudflare.com/api/v1/count', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Basic ' + btoa('freqtrader:ravi'),
@@ -2711,7 +2711,7 @@
         }
 
         async function getTradeStatus() {
-            const res = await fetch('https://specialists-progress-drop-kay.trycloudflare.com/api/v1/status', {
+            const res = await fetch('https://reached-survive-beginner-larry.trycloudflare.com/api/v1/status', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Basic ' + btoa('freqtrader:ravi'),
@@ -2723,7 +2723,7 @@
         }
 
         async function getTradeStats() {
-            const res = await fetch('https://specialists-progress-drop-kay.trycloudflare.com/api/v1/stats', {
+            const res = await fetch('https://reached-survive-beginner-larry.trycloudflare.com/api/v1/stats', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Basic ' + btoa('freqtrader:ravi'),
@@ -2750,8 +2750,8 @@
             const buildRow = (t) => {
                 const rawPair = t.pair || '-';
                 const pair = String(rawPair).split(':')[0]; // e.g., SOL/USDT:USDT -> SOL/USDT
-                const openRate = (t.open_rate != null) ? `$${Number(t.open_rate).toFixed(2)}` : '-';
-                const currentRate = (t.current_rate != null) ? `$${Number(t.current_rate).toFixed(2)}` : '-';
+                const openRate = (t.open_rate != null) ? `$${Number(t.open_rate).toFixed(4)}` : '-';
+                const currentRate = (t.current_rate != null) ? `$${Number(t.current_rate).toFixed(4)}` : '-';
                 const pnl = (t.profit_pct != null) ? `${t.profit_pct >= 0 ? '+' : ''}${Number(t.profit_pct).toFixed(2)}%` : '-';
                 const pnlColor = (t.profit_pct != null) ? (t.profit_pct >= 0 ? '#4caf50' : '#ff5252') : '#666';
                 const position = t.is_short ? 'SELL' : 'BUY';
@@ -2814,7 +2814,7 @@
 
         // ===== Strategy: fetch + render simple cards on first open =====
         async function getStrategies() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/strategies';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/strategies';
             const res = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -2862,7 +2862,7 @@
 
         // ===== Strategy detail: fetch + render key settings =====
         async function getStrategyDetail(name) {
-            const url = `https://specialists-progress-drop-kay.trycloudflare.com/api/v1/strategy/${encodeURIComponent(name)}`;
+            const url = `https://reached-survive-beginner-larry.trycloudflare.com/api/v1/strategy/${encodeURIComponent(name)}`;
             const res = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -2984,7 +2984,7 @@
 
         // ===== Control Bot: Status from /health and runmode from /show_config =====
         async function getHealth() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/health';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/health';
             const res = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -2997,7 +2997,7 @@
         }
 
         async function getConfigRunmode() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/show_config';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/show_config';
             const res = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -3110,12 +3110,12 @@
             }
         }
 
-        function startBot() { postAction('Start Bot', 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/start'); }
-        function stopBot() { postAction('Stop Bot', 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/stop'); }
-        function reloadBotConfig() { postAction('Reload Config', 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/reload_config'); }
-        function stopBuy() { postAction('Stop Buy', 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/stopbuy'); }
-        function stopEntry() { postAction('Stop Entry', 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/stopentry'); }
-        function pauseBot() { postAction('Pause Bot', 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/pause'); }
+        function startBot() { postAction('Start Bot', 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/start'); }
+        function stopBot() { postAction('Stop Bot', 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/stop'); }
+        function reloadBotConfig() { postAction('Reload Config', 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/reload_config'); }
+        function stopBuy() { postAction('Stop Buy', 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/stopbuy'); }
+        function stopEntry() { postAction('Stop Entry', 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/stopentry'); }
+        function pauseBot() { postAction('Pause Bot', 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/pause'); }
 
         // ===== Circle Progress using exit_reasons.force_exit (wins/losses/draws) =====
         function extractCountsFromStats(payload) {
@@ -3175,7 +3175,7 @@
 
         // ===== Closed Trades (fetch once on open) =====
         async function getClosedTrades() {
-            const url = 'https://specialists-progress-drop-kay.trycloudflare.com/api/v1/trades';
+            const url = 'https://reached-survive-beginner-larry.trycloudflare.com/api/v1/trades';
             const res = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -3236,11 +3236,17 @@
             const tbody = document.getElementById('trades-list-closed');
             const summary = document.getElementById('trade-summary-closed');
             if (!tbody) return;
-            const rowsHtml = closed.map(t => {
+            // Sort by most recent close time first
+            const closedSorted = closed.slice().sort((a, b) => {
+                const at = (typeof a.close_timestamp === 'number') ? a.close_timestamp : (a.close_date ? new Date(a.close_date).getTime() : 0);
+                const bt = (typeof b.close_timestamp === 'number') ? b.close_timestamp : (b.close_date ? new Date(b.close_date).getTime() : 0);
+                return bt - at;
+            });
+            const rowsHtml = closedSorted.map(t => {
                 const pair = normalizePair(t.pair || '-');
                 const amount = (typeof t.amount !== 'undefined') ? t.amount : '-';
-                const openRate = (typeof t.open_rate !== 'undefined') ? t.open_rate : '-';
-                const closeRate = (typeof t.close_rate !== 'undefined') ? t.close_rate : '-';
+                const openRate = (typeof t.open_rate !== 'undefined') ? Number(t.open_rate).toFixed(4) : '-';
+                const closeRate = (typeof t.close_rate !== 'undefined') ? Number(t.close_rate).toFixed(4) : '-';
                 const profitRatio = (typeof t.profit_ratio === 'number') ? (t.profit_ratio * 100).toFixed(2) + '%' : (typeof t.close_profit_pct === 'number' ? t.close_profit_pct.toFixed(2) + '%' : '-');
                 const pnl = (typeof t.profit_abs === 'number') ? t.profit_abs : (typeof t.close_profit_abs === 'number' ? t.close_profit_abs : (typeof t.realized_profit === 'number' ? t.realized_profit : '-'));
                 const pos = t.is_short ? 'Short' : 'Long';
